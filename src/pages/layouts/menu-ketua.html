@@ -1,5 +1,11 @@
           <ul class="sidebar-menu">
               <li{{ ' class="active"'|is_active('^index(.*)', page)|safe }}><a class="nav-link" href="index-ketua.html"><i class="fas fa-fire"></i><span>Dashboard</span></a></li>
               <li{{ ' class="active"'|is_active('^proker-ketua(.*)', page)|safe }}><a class="nav-link" href="proker-ketua.html"><i class="fas fa-briefcase"></i><span>Program Kerja</span></a></li>
-              <li{{ ' class="active"'|is_active('^report(.*)', page)|safe }}><a class="nav-link" href="report-ketua.html"><i class="fas fa-file-alt"></i><span>Laporan</span></a></li>
-          </ul>
+              <li class="nav-item dropdown{{ ' active'|is_active('^report-(.*)', page)|safe }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i> <span>Laporan</span></a>
+                <ul class="dropdown-menu">
+                  <li{{ ' class="active"'|is_active('^report-ketua(.*)', page)|safe }}><a class="nav-link" href="report-ketua.html">Laporan</a></li>
+                  <li{{ ' class="active"'|is_active('^report-detail(.*)', page)|safe }}><a class="nav-link" href="report-detail.html">Detail Transaksi</a></li>
+                </ul>
+              </li>
+            </ul>
