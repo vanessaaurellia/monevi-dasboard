@@ -12,29 +12,35 @@
         <section class="section">
           <div class="section-header" style="justify-content: space-between;">
             <h1>Laporan</h1>
-            <div style="display: flex;">
-              <div class="section-header-button">
-                <nav class="d-inline-block">
-                  <ul class="pagination mb-0">
-                    <li class="page-item">
-                      <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                    </li>
-                    <li class="page-item">
-                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Desember 2022
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Januari 2023</a>
-                        <a class="dropdown-item" href="#">Februari 2023</a>
-                        <a class="dropdown-item" href="#">Maret 2023</a>
-                      </div>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="#">Pilih Laporan</a></div>
+              <div class="breadcrumb-item"><a href="#">Laporan HIMTI</a></div>
+              <div class="breadcrumb-item">Detail Transaksi</div>
+            </div>
+          </div>
+
+          <div class="card" style="display: flex;">
+            <div class="card-body">
+              <nav class="d-inline-block">
+                <ul class="pagination mb-0">
+                  <li class="page-item">
+                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                  </li>
+                  <li class="page-item">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Desember 2022
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Januari 2023</a>
+                      <a class="dropdown-item" href="#">Februari 2023</a>
+                      <a class="dropdown-item" href="#">Maret 2023</a>
+                    </div>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
 
@@ -43,6 +49,10 @@
               <div class="card">
                 <div class="card-header">
                   <h4>Laporan Keuangan Kas dan Bank UKM HIMTI (Himpunan Mahasiswa Teknik Informatika) per Bulan Desember 2022</h4>
+                  <div class="card-header-action">
+                    <button class="btn btn-primary" onclick="location.href='report-detail.html';">
+                      Lihat Detail Transaksi</button>
+                  </div>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
