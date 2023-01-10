@@ -1,6 +1,6 @@
 {% set title = 'Detail' %}
-{% set page = 'report-detail.html' %}
-{% extends 'layouts/master-ketua.html' %}
+{% set page = 'report-pengawas-detail.html' %}
+{% extends 'layouts/master-pengawas.html' %}
 
 {% block plugins_css %}
   <link rel="stylesheet" href="../node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
@@ -12,8 +12,15 @@
         <section class="section">
           <div class="section-header" style="justify-content: space-between;">
             <h1>Detail Transaksi</h1>
-            <div style="display: flex;">
-              <div class="section-header-button">
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="report-pengawas.html">Pilih Laporan</a></div>
+              <div class="breadcrumb-item"><a href="report-pengawas-ok.html">Laporan HIMTI</a></div>
+              <div class="breadcrumb-item">Detail Transaksi</div>
+            </div>
+          </div>
+
+          <div class="card" style="display: flex;">
+              <div class="card-body">
                 <nav class="d-inline-block">
                   <ul class="pagination mb-0">
                     <li class="page-item">
@@ -36,7 +43,6 @@
                 </nav>
               </div>
             </div>
-          </div>
 
           <div class="row">
             <div class="col">

@@ -1,5 +1,5 @@
-{% set title = 'Transactions' %}
-{% set page = 'transactions.html' %}
+{% set title = 'Report' %}
+{% set page = 'report.html' %}
 {% extends 'layouts/master.html' %}
 
 {% block plugins_css %}
@@ -11,178 +11,192 @@
 {% block content %}
         <section class="section">
           <div class="section-header" style="justify-content: space-between;">
-            <h1>Transaksi</h1>
-            <div style="display: flex;">
-              <div class="section-header-button">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Tambah Transaksi
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" data-toggle="modal" data-target="#tambahTransaksi">Tambah Transaksi</a>
-                  <a class="dropdown-item" data-toggle="modal" data-target="#imporTransaksi">Impor</a>
-                </div>
-              </div>
-              <div class="section-header-button">
-                <nav class="d-inline-block">
-                  <ul class="pagination mb-0">
-                    <li class="page-item">
-                      <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                    </li>
-                    <li class="page-item">
-                      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Desember 2022
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Januari 2023</a>
-                        <a class="dropdown-item" href="#">Februari 2023</a>
-                        <a class="dropdown-item" href="#">Maret 2023</a>
-                      </div>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
+            <h1>Laporan</h1>
           </div>
 
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-              <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                  <i class="fas fa-regular fa-wallet"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Total Saldo</h4>
-                  </div>
-                  <div class="card-body">
-                    Rp 10,000,000
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-              <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                  <i class="fas fa-minus"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Total Pengeluaran</h4>
-                  </div>
-                  <div class="card-body">
-                    Rp 1,000,000
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-              <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                  <i class="fas fa-plus"></i>
-                </div>
-                <div class="card-wrap">
-                  <div class="card-header">
-                    <h4>Total Pendapatan</h4>
-                  </div>
-                  <div class="card-body">
-                    Rp 9,000,000
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <div class="card-header">
-                  <h5>Filter</h5>
-                </div>
-                <div class="card-body">
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <label for="inputCity">Berdasarkan dompet</label>
-                      <select id="inputState" class="form-control">
-                        <option selected>Semua</option>
-                        <option>Bank</option>
-                        <option>Kas</option>
-                      </select>
+          <div class="card" style="display: flex;">
+            <div class="card-body">
+              <nav class="d-inline-block">
+                <ul class="pagination mb-0">
+                  <li class="page-item">
+                    <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                  </li>
+                  <li class="page-item">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Desember 2022
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Januari 2023</a>
+                      <a class="dropdown-item" href="#">Februari 2023</a>
+                      <a class="dropdown-item" href="#">Maret 2023</a>
                     </div>
-                    <div class="form-group col-md-4">
-                      <label for="inputState">Berdasarkan jenis transaksi</label>
-                      <select id="inputState" class="form-control">
-                        <option selected>Semua</option>
-                        <option>Debet</option>
-                        <option>Kredit</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label for="inputZip">Berdasarkan kategori</label>
-                      <select id="inputState" class="form-control">
-                        <option selected>Semua</option>
-                        <option>Rutin</option>
-                        <option>Non Rutin</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
 
           <div class="row">
             <div class="col-12">
               <div class="card">
+                <div class="card-header">
+                  <h4>Laporan Keuangan Kas dan Bank UKM HIMTI (Himpunan Mahasiswa Teknik Informatika) per Bulan Desember 2022</h4>
+                  <div class="card-header-action">
+                    <button class="btn btn-primary" onclick="location.href='report-pengawas-detail.html';">
+                      Lihat Detail Transaksi</button>
+                  </div>
+                </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-striped table-bordered" id="table-1">
                       <tr>
-                        <th class="sorting" tabindex="0">No</th>
-                        <th>Tanggal</th>
-                        <th>Dompet</th>
-                        <th>Transaksi</th>
-                        <th>Kategori</th>
-                        <th>Keterangan</th>
-                        <th>Jumlah</th>
-                        <th>Bukti Transaksi</th>
-                        <th>Aksi</th>
+                        <th style="font-weight: 800;">Kas</th>
+                        <th></th>
+                        <th></th>
                       </tr>
                       <tr>
-                        <td>1</td>
-                        <td>1 Desember 2022</td>
-                        <td>Bank</td>
-                        <td>Pemasukan</td>
-                        <td>Non Rutin</td>
-                        <td>Pemindahan dari 2021</td>
-                        <td class="text-primary">+ Rp 10,000,000</td>
-                        <td><div class="gallery"><div class="gallery-item" data-image="../assets/img/news/img01.jpg"></div></div></td>
-                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#editTransaksi">
-                          <i class="far fa-edit"></i></button>
-                          <button class="btn btn-danger" data-confirm="Hapus 1 transaksi|Apakah Anda benar-benar ingin menghapus transaksi ini?"" data-confirm-yes="alert('Deleted :)');"><i class="far fa-trash-alt"></i></button>
-                        </td>
+                        <td>Saldo Kas 30 November 2022</td>
+                        <td></td>
+                        <td>Rp 10,000,000</td>
                       </tr>
                       <tr>
-                        <td>2</td>
-                        <td>1 Desember 2022</td>
-                        <td>Bank</td>
-                        <td>Pembayaran pembicara</td>
-                        <td>Non Rutin</td>
-                        <td>-</td>
-                        <td class="text-danger">- Rp 1,000,000</td>
-                        <td><div class="gallery transaction"><div class="gallery-item" data-image="../assets/img/news/img02.jpg"></div></div></td>
-                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#editTransaksi">
-                          <i class="far fa-edit"></i></button>
-                          <button class="btn btn-danger" data-confirm="Hapus 1 transaksi|Apakah Anda benar-benar ingin menghapus transaksi ini?"" data-confirm-yes="alert('Deleted :)');"><i class="far fa-trash-alt"></i></button>
-                        </td>
+                        <td>Penerimaan Selama Bulan Desember 2022</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>1. Rutin</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2. Non Rutin</td>
+                        <td>Rp 50,000</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>Rp 50,000</td>
+                        <td>Rp 50,000</td>
+                      </tr>
+                      <tr>
+                        <td>Pengeluaran Selama Bulan Desember 2022</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>1. Rutin</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2. Non Rutin</td>
+                        <td>Rp 50,000</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>Rp 50,000</td>
+                        <td>Rp 50,000</td>
+                      </tr>
+                      <tr>
+                        <td>Saldo Kas Per Bulan Desember 2022</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Hasil Kas Opname</td>
+                        <td></td>
+                        <td>Rp 0</td>
+                      </tr>
+                      <tr>
+                        <td>Selisih Saldo Buku vs Cash Opname</td>
+                        <td></td>
+                        <td>Rp 0</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th style="font-weight: 800;">Bank</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                      <tr>
+                        <td>Saldo Kas 30 November 2022</td>
+                        <td></td>
+                        <td>Rp 10,000,000</td>
+                      </tr>
+                      <tr>
+                        <td>Penerimaan Selama Bulan Desember 2022</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>1. Rutin</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2. Non Rutin</td>
+                        <td>Rp 50,000</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>Rp 50,000</td>
+                        <td>Rp 50,000</td>
+                      </tr>
+                      <tr>
+                        <td>Pengeluaran Selama Bulan Desember 2022</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>1. Rutin</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2. Non Rutin</td>
+                        <td>Rp 50,000</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>Rp 50,000</td>
+                        <td>Rp 50,000</td>
+                      </tr>
+                      <tr>
+                        <td>Saldo Bank Per Bulan Desember 2022</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Hasil Bank Opname</td>
+                        <td></td>
+                        <td>Rp 0</td>
+                      </tr>
+                      <tr>
+                        <td>Selisih Saldo Buku vs Cash Opname</td>
+                        <td></td>
+                        <td>Rp 0</td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: 800;">Total Cash dan Bank</td>
+                        <td></td>
+                        <td style="font-weight: 800;">Rp 10,000,000</td>
                       </tr>
                     </table>
                   </div>
                 </div>
                 <div class="card-footer text-right">
-                  <button type="button" class="btn btn-primary" data-confirm="Kirim laporan|Apakah Anda benar-benar ingin mengirim laporan ini?"" data-confirm-yes="alert('Terkirim :)');">Kirim Laporan</button>
+                  <button type="button" class="btn btn-primary" data-confirm="Kirim laporan|Apakah Anda benar-benar ingin kirim laporan ini?"" data-confirm-yes="alert('Terkirim :)');">Kirim Laporan</button>
                 </div>
               </div>
             </div>
