@@ -158,10 +158,11 @@
                         <td>Non Rutin</td>
                         <td>Pemindahan dari 2021</td>
                         <td class="text-primary">+ Rp 10,000,000</td>
-                        <td><div class="gallery"><div class="gallery-item" data-image="../assets/img/news/img01.jpg"></div></div></td>
+                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#showImage">
+                          <i class="far fa-eye"></i></button></td>
                         <td><button class="btn btn-primary" data-toggle="modal" data-target="#editTransaksi">
                           <i class="far fa-edit"></i></button>
-                          <button class="btn btn-danger" data-confirm="Hapus 1 transaksi|Apakah Anda benar-benar ingin menghapus transaksi ini?"" data-confirm-yes="alert('Deleted :)');"><i class="far fa-trash-alt"></i></button>
+                          <button class="btn btn-danger" data-toggle="modal" data-target="#hapusTransaksi"><i class="far fa-trash-alt"></i></button>
                         </td>
                       </tr>
                       <tr>
@@ -175,7 +176,7 @@
                         <td><div class="gallery transaction"><div class="gallery-item" data-image="../assets/img/news/img02.jpg"></div></div></td>
                         <td><button class="btn btn-primary" data-toggle="modal" data-target="#editTransaksi">
                           <i class="far fa-edit"></i></button>
-                          <button class="btn btn-danger" data-confirm="Hapus 1 transaksi|Apakah Anda benar-benar ingin menghapus transaksi ini?"" data-confirm-yes="alert('Deleted :)');"><i class="far fa-trash-alt"></i></button>
+                          <button class="btn btn-danger" data-toggle="modal" data-target="#hapusTransaksi"><i class="far fa-trash-alt"></i></button>
                         </td>
                       </tr>
                     </table>
@@ -367,7 +368,8 @@
                   <div class="form-group">
                     <label class="col-form-label text-md-left">Bukti Transaksi*</label>
                     <div class="mb-3">
-                      <input class="form-control" type="file" id="formFile">
+                      <input class="form-control" type="file" id="formFile" onchange="readURL(this);"><br>
+                      <img src="#" id="buktiTransaksi" style="width: 100%;">
                     </div>
                   </div>
 
@@ -380,9 +382,54 @@
             </div>
           </div>
         </div>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="hapusTransaksi">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Hapus 1 transaksi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Apakah Anda benar-benar ingin menghapus transaksi ini?</p>
+              </div>
+              <div class="modal-footer bg-whitesmoke br">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-primary">Hapus</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="showImage">
+          <div class="modal-dialog" data-dismiss="modal">
+            <div class="modal-content"  >
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <img src="../assets/img/news/img02.jpg" class="img-responsive" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        </div>
 {% endblock %}
 
 {% block plugins_js %}
+        <script>
+              function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#buktiTransaksi')
+                        .attr('src', e.target.result)
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        </script>
   <script src="../node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
   <script src="../node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="../node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
